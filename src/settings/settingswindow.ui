@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsWindow</class>
+ <widget class="QMainWindow" name="SettingsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1005</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DirectaParadoxa设置</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="settings.qrc">
+    <normaloff>:/icon.png</normaloff>:/icon.png</iconset>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Triangular</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>启动命令</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="startCommand">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QToolBox" name="toolBox">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>987</width>
+         <height>349</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>启动选项</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QTabWidget" name="autoOrManual">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="tabBarAutoHide">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>自动启动</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="disableModsCheckBox">
+              <property name="text">
+               <string>禁用所有模组</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>渲染引擎</string>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QComboBox" name="renderEngine">
+                 <property name="currentText">
+                  <string notr="true">DirectX 11</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string notr="true">DirectX 11</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string notr="true">OpenGL</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string notr="true">Direct3D 9</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QGroupBox" name="fpsLimitGroupBox">
+              <property name="title">
+               <string>限制最高FPS</string>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>最高FPS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSpinBox" name="fpsLimit"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="noLogsCheckBox">
+              <property name="text">
+               <string>禁用日志</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="continueGameCheckBox">
+              <property name="text">
+               <string>继续上次的游戏</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="disableWorkshopCheckBox">
+              <property name="text">
+               <string>禁止加载创意工坊</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>手动启动</string>
+           </attribute>
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>121</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>请手动编辑启动命令</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>987</width>
+         <height>349</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>环境变量</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="envTable">
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>2</number>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>名称</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>值</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="addEnvButton">
+            <property name="text">
+             <string>添加环境变量</string>
+            </property>
+            <property name="icon">
+             <iconset theme="QIcon::ThemeIcon::ListAdd"/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="deleteEnvButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>删除此环境变量</string>
+            </property>
+            <property name="icon">
+             <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>987</width>
+         <height>349</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>高级</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_1919810">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>调试</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_114514">
+           <item row="1" column="0">
+            <widget class="QPushButton" name="stdErrorButton">
+             <property name="text">
+              <string>打开城市天际线上次运行的标准错误的记录</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="stdOutputButton">
+             <property name="text">
+              <string>打开城市天际线上次运行的标准输出的记录</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>launcherpath文件位置</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="launcherPath">
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="selectLauncherPath">
+         <property name="text">
+          <string>选择位置</string>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::FolderOpen"/>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QToolButton" name="uninstallButton">
+        <property name="text">
+         <string>卸载</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="startButton">
+        <property name="text">
+         <string>启动</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaPlaybackStart"/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="settings.qrc"/>
+ </resources>
+ <connections/>
+</ui>
