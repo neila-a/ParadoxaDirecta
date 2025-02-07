@@ -1,5 +1,4 @@
 #include "settingswindow.h"
-#include "./ui_settingswindow.h"
 
 SettingsWindow::SettingsWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,23 +8,29 @@ SettingsWindow::SettingsWindow(QWidget *parent)
     processStartCommand();
     processDefaultValues();
     processConnects();
+
+    QString background = settings.getGamepath() + "/LauncherAssets/app-background.png";
+    QPixmap pixmap = QPixmap(QDir::toNativeSeparators(background)).scaled(size());
+    QPalette palette;
+    palette.setBrush(QPalette::Window, QBrush(pixmap));
+    setPalette(palette);
 }
 
 void SettingsWindow::processConnects() {
     connect(ui->continueGameCheckBox,
-            &QCheckBox::stateChanged,
+            &QCheckBox::checkStateChanged,
             this,
             &SettingsWindow::continueGameCheckBox_checkStateChanged);
     connect(ui->disableWorkshopCheckBox,
-            &QCheckBox::stateChanged,
+            &QCheckBox::checkStateChanged,
             this,
             &SettingsWindow::disableWorkshopCheckBox_checkStateChanged);
     connect(ui->disableModsCheckBox,
-            &QCheckBox::stateChanged,
+            &QCheckBox::checkStateChanged,
             this,
             &SettingsWindow::disableModsCheckBox_checkStateChanged);
     connect(ui->noLogsCheckBox,
-            &QCheckBox::stateChanged,
+            &QCheckBox::checkStateChanged,
             this,
             &SettingsWindow::noLogsCheckBox_checkStateChanged);
 }
@@ -72,7 +77,7 @@ void SettingsWindow::processStartCommand() {
                                   + settings.getStartArguments().join(" "));
     } else {
         ui->startCommand->setDisabled(false);
-        ui->startCommand->setText(settings.value("startCommand").toString());
+        ui->startCommand->setText(settings.getStartCommand());
     }
 }
 

@@ -7,18 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>1005</width>
-    <height>648</height>
+    <height>605</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>DirectaParadoxa设置</string>
+   <string>ParadoxaDirecta设置</string>
   </property>
   <property name="windowIcon">
    <iconset resource="settings.qrc">
     <normaloff>:/icon.png</normaloff>:/icon.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="tabShape">
-   <enum>QTabWidget::TabShape::Triangular</enum>
+   <enum>QTabWidget::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -45,8 +48,11 @@
     </item>
     <item row="1" column="0">
      <widget class="QToolBox" name="toolBox">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
@@ -54,8 +60,11 @@
          <x>0</x>
          <y>0</y>
          <width>987</width>
-         <height>349</height>
+         <height>379</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
        <attribute name="label">
         <string>启动选项</string>
@@ -63,6 +72,9 @@
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QTabWidget" name="autoOrManual">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(255, 255, 255, 0%);</string>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -191,7 +203,7 @@
          <x>0</x>
          <y>0</y>
          <width>987</width>
-         <height>349</height>
+         <height>379</height>
         </rect>
        </property>
        <attribute name="label">
@@ -257,7 +269,7 @@
              <iconset theme="QIcon::ThemeIcon::EditDelete"/>
             </property>
             <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -271,30 +283,62 @@
          <x>0</x>
          <y>0</y>
          <width>987</width>
-         <height>349</height>
+         <height>379</height>
         </rect>
        </property>
        <attribute name="label">
         <string>高级</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_1919810">
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QGroupBox" name="groupBox_4">
           <property name="title">
            <string>调试</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_114514">
            <item row="1" column="0">
+            <widget class="QPushButton" name="stdOutputButton">
+             <property name="text">
+              <string>打开城市天际线上次运行的标准输出的记录</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
             <widget class="QPushButton" name="stdErrorButton">
              <property name="text">
               <string>打开城市天际线上次运行的标准错误的记录</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QPushButton" name="stdOutputButton">
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>launcherpath文件位置</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="launcherPath">
+             <property name="frame">
+              <bool>true</bool>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="selectLauncherPath">
              <property name="text">
-              <string>打开城市天际线上次运行的标准输出的记录</string>
+              <string>选择位置</string>
+             </property>
+             <property name="icon">
+              <iconset theme="QIcon::ThemeIcon::FolderOpen"/>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
              </property>
             </widget>
            </item>
@@ -303,38 +347,6 @@
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="title">
-       <string>launcherpath文件位置</string>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLineEdit" name="launcherPath">
-         <property name="frame">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="selectLauncherPath">
-         <property name="text">
-          <string>选择位置</string>
-         </property>
-         <property name="icon">
-          <iconset theme="QIcon::ThemeIcon::FolderOpen"/>
-         </property>
-         <property name="toolButtonStyle">
-          <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </widget>
     </item>
     <item row="3" column="0">
@@ -348,7 +360,7 @@
          <iconset theme="QIcon::ThemeIcon::EditDelete"/>
         </property>
         <property name="toolButtonStyle">
-         <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
         </property>
        </widget>
       </item>

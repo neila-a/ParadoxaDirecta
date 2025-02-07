@@ -17,7 +17,7 @@ public:
 private:
     Settings settings;
     void setupEnvironment();
-    QString gameDir;
+    QString _gameDir;
 private slots:
     void on_finished(int exitCode);
     void on_error(ProcessError error);

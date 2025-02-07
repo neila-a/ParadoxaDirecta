@@ -12,7 +12,7 @@ void SettingsWindow::on_startCommand_textEdited(const QString &arg1) {
     settings.setValue("startCommand", arg1);
 }
 
-void SettingsWindow::continueGameCheckBox_checkStateChanged(int value) {
+void SettingsWindow::continueGameCheckBox_checkStateChanged(Qt::CheckState value) {
     if (value == Qt::Checked) {
         settings.setValue("continueGame", true);
     } else {
@@ -21,7 +21,7 @@ void SettingsWindow::continueGameCheckBox_checkStateChanged(int value) {
     processStartCommand();
 }
 
-void SettingsWindow::disableWorkshopCheckBox_checkStateChanged(int value) {
+void SettingsWindow::disableWorkshopCheckBox_checkStateChanged(Qt::CheckState value) {
     if (value == Qt::Checked) {
         settings.setValue("disableWorkshop", true);
     } else {
@@ -30,7 +30,7 @@ void SettingsWindow::disableWorkshopCheckBox_checkStateChanged(int value) {
     processStartCommand();
 }
 
-void SettingsWindow::disableModsCheckBox_checkStateChanged(int value) {
+void SettingsWindow::disableModsCheckBox_checkStateChanged(Qt::CheckState value) {
     if (value == Qt::Checked) {
         settings.setValue("disableMods", true);
     } else {
@@ -39,7 +39,7 @@ void SettingsWindow::disableModsCheckBox_checkStateChanged(int value) {
     processStartCommand();
 }
 
-void SettingsWindow::noLogsCheckBox_checkStateChanged(int value) {
+void SettingsWindow::noLogsCheckBox_checkStateChanged(Qt::CheckState value) {
     if (value == Qt::Checked) {
         settings.setValue("noLogs", true);
     } else {

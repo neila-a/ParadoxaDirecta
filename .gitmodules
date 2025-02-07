@@ -1,0 +1,3 @@
+[submodule "qt-material-widgets"]
+	path = qt-material-widgets
+	url = git@github.com:sebcaux/qt-material-widgets.git

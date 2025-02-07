@@ -12,9 +12,15 @@ class Settings : public QSettings {
 public:
     explicit Settings(QSettings *parent = nullptr);
     const QStringList getStartArguments();
+
     const QString getLauncherpathLocation();
     bool writeLauncherpath();
+
+    const QString getGamepath();
+    const QString getStartCommand();
+
     static const QString CITIES;
+    static const QString basePath;
 
 signals:
 };

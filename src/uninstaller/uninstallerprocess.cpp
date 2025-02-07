@@ -2,7 +2,8 @@
 
 UninstallerProcess::UninstallerProcess() {
     copyTarget = QDir::toNativeSeparators(QDir::tempPath() + "/" + UninstallerExeName);
-    copyDone = QFile::copy(qApp->applicationFilePath(), copyTarget);
+    QString uninstaller = QDir::toNativeSeparators(qApp->applicationDirPath() + "/" + "uninstaller");
+    copyDone = QFile::copy(uninstaller, copyTarget);
 }
 
 void UninstallerProcess::uninstall() {

@@ -10,6 +10,7 @@
 #include "../main/consts.h"
 #include "../main/settings.h"
 #include "../uninstaller/uninstallerprocess.h"
+#include "./ui_settingswindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,10 +28,10 @@ public:
 private slots:
     void on_autoOrManual_currentChanged(int index);
     void on_startCommand_textEdited(const QString &arg1);
-    void continueGameCheckBox_checkStateChanged(int value);
-    void disableWorkshopCheckBox_checkStateChanged(int value);
-    void disableModsCheckBox_checkStateChanged(int value);
-    void noLogsCheckBox_checkStateChanged(int value);
+    void continueGameCheckBox_checkStateChanged(Qt::CheckState value);
+    void disableWorkshopCheckBox_checkStateChanged(Qt::CheckState value);
+    void disableModsCheckBox_checkStateChanged(Qt::CheckState value);
+    void noLogsCheckBox_checkStateChanged(Qt::CheckState value);
     void on_fpsLimit_valueChanged(int arg1);
     void on_renderEngine_currentIndexChanged(int index);
     void on_uninstallButton_clicked();

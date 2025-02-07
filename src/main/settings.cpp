@@ -10,15 +10,27 @@ const QString Settings::CITIES = "\Cities.exe";
 const QString Settings::CITIES = "/Cities.x64";
 #endif
 
-const QString Settings::getLauncherpathLocation() {
 #ifdef Q_OS_WINDOWS
-    const QString basePath = "/AppData/Local/";
+const QString Settings::basePath = "/AppData/Local/";
 #else
-    const QString basePath = "/.local/share/";
+const QString Settings::basePath = "/.local/share/";
 #endif
+
+const QString Settings::getLauncherpathLocation() {
     const QString defaultLocation = QDir::homePath() + basePath
                                     + "Paradox Interactive/launcherpath";
     return value("launcherpathLocation", QDir::toNativeSeparators(defaultLocation)).toString();
+}
+
+const QString Settings::getGamepath() {
+    const QString defaultGamepath = QDir::homePath() + basePath
+                                    + "Steam/steamapps/common/Cities_Skylines";
+    return value("gamepath", QDir::toNativeSeparators(defaultGamepath)).toString();
+}
+
+const QString Settings::getStartCommand() {
+    const QString defaultCommand = getGamepath() + "/" + CITIES;
+    return value("startCommand", defaultCommand).toString();
 }
 
 bool Settings::writeLauncherpath() {
